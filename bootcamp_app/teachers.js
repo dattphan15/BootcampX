@@ -24,9 +24,9 @@ const cohortName = process.argv[2];
 const values = [cohortName];
 
 pool.query(queryString, values)
-.then(res => {
-  res.rows.forEach(user => {
-    console.log(`${user.cohort}: ${user.teacher}`);
+  .then(res => {
+    res.rows.forEach(user => {
+      console.log(`${user.cohort}: ${user.teacher}`);
+    })
   })
-})
-.catch(err => console.error('query error', err.stack));
+  .catch(err => console.error('query error', err.stack));
